@@ -1,0 +1,41 @@
+<head>
+    <title>car-inventory</title>
+</head>
+
+<body ng-app="carInventory" ng-controller="AppController as app">
+<header>
+    <h1>Todo List</h1>
+
+    <!-- add a form below the h1 -->
+    <form class="new-task">
+        <label for="make">Make</label>
+        <input id="make" ng-model="app.newCar.make" type="text"
+               name="text" />
+
+        <label for="model">Model</label>
+        <input id="model" ng-model="app.newCar.model" type="text"
+               name="text" />
+
+        <label for="year">Year</label>
+        <input id="year" ng-model="app.newCar.year" type="text"
+               name="text" />
+
+        <label for="miles">Miles</label>
+        <input id="miles" ng-model="app.newCar.miles" type="text"
+               name="text" />
+        <button ng-click="app.addCar(app.newCar)">Add Car</button>
+    </form>
+
+</header>
+
+
+<div class="container-fluid">
+    <ul ng-repeat="car in app.cars">
+        <li class="col-md-4">{{car.make}}</li>
+        <li class="col-md-4">{{car.model}}</li>
+        <li class="col-md-4">{{car.year}}</li>
+        <li class="col-md-4">{{car.miles}}</li>
+    </ul>
+</div>
+
+</body>
